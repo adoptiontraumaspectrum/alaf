@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adoption Lifespan Activation Framework</title>
+<meta name="description" content="The Adoption Lifespan Activation Framework (ALAF): an emerging, adoptee-centered framework for understanding adoption as a lifelong developmental experience. Ashley M. Toland, DSW, LCSW.">
+<meta name="author" content="Ashley M. Toland, DSW, LCSW">
+<meta property="og:title" content="Adoption Lifespan Activation Framework">
+<meta property="og:description" content="An adoptee-centered framework proposing that adoption influences psychosocial development across the lifespan, with self-appraisal and meaning-making as the central mechanism.">
+<meta property="og:image" content="images/alaf-conceptual-model.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f4f0;
+    --surface: #fbfbf8;
+    --ink: #1c1e22;
+    --muted: #585c64;
+    --navy: #1f3a5f;
+    --rule: #d9d8d1;
+    --clay: #9b5748;
+    --umber: #7c6a58;
+    --ochre: #a9813c;
+    --olive: #776e3d;
+    --sage: #576b54;
+    --teal: #4c656c;
+    --slate: #585d76;
+    --plum: #6a5a72;
+    --spectrum: linear-gradient(90deg, var(--clay), var(--ochre) 25%, var(--olive) 40%, var(--sage) 55%, var(--teal) 70%, var(--slate) 85%, var(--plum));
+    --serif: "Spectral", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --measure: 44rem;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--navy); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .skip { position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff; padding: .5rem 1rem; font-family: var(--sans); z-index: 100; }
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(244,244,240,.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--sans);
+  }
+  .site-inner { max-width: 72rem; margin: 0 auto; padding: 1rem 1.5rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 2rem; justify-content: space-between; }
+  .brand { font-weight: 600; font-size: .95rem; color: var(--ink); text-decoration: none; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+  nav a:hover { color: var(--navy); }
+
+  main { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 4.5rem 0; border-top: 1px solid var(--rule); }
+  section:first-of-type, #overview { border-top: 0; }
+
+  .eyebrow { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .02em; color: var(--muted); margin: 0 0 .75rem; }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.15; margin: 0; color: var(--ink); }
+  h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); margin-bottom: 1.25rem; }
+  h3 { font-size: 1.35rem; margin-bottom: .5rem; }
+  h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: .35rem; }
+  p { margin: 0 0 1.1rem; max-width: var(--measure); }
+  .lede { font-size: 1.3rem; line-height: 1.55; }
+  .small { font-family: var(--sans); font-size: .875rem; color: var(--muted); line-height: 1.55; }
+
+  /* Hero */
+  .hero { padding: 6rem 0 4rem; }
+  .hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); letter-spacing: -.01em; max-width: 52rem; }
+  .hero .subtitle { font-style: italic; color: var(--navy); font-size: clamp(1.2rem, 2.4vw, 1.5rem); margin: 1.25rem 0 2rem; max-width: 46rem; line-height: 1.4; }
+  .hero .byline { font-family: var(--sans); font-size: .95rem; color: var(--muted); margin: 0; }
+  .spectrum { height: 6px; border-radius: 3px; background: var(--spectrum); margin: 3rem 0 0; }
+
+  /* Callout */
+  .claim {
+    border-left: 3px solid var(--navy);
+    background: var(--surface);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0 0;
+    max-width: 50rem;
+  }
+  .claim p { margin: 0; font-size: 1.2rem; }
+  .claim .label { font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--navy); margin-bottom: .5rem; letter-spacing: .03em; text-transform: uppercase; }
+
+  /* Figure */
+  figure { margin: 2rem 0 0; }
+  .figure-frame { background: #fff; border: 1px solid var(--rule); padding: 1rem; border-radius: 4px; }
+  .figure-frame a { display: block; cursor: zoom-in; }
+  figcaption { font-family: var(--sans); font-size: .85rem; color: var(--muted); margin-top: .9rem; max-width: 52rem; line-height: 1.55; }
+  figcaption strong { color: var(--ink); }
+
+  /* Grids & cards */
+  .grid { display: grid; gap: 1.25rem; margin-top: 2rem; }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1.5rem; border-top: 3px solid var(--accent, var(--navy)); }
+  .card p { font-size: 1.02rem; }
+  .card ul { margin: .5rem 0 0; padding-left: 1.1rem; font-family: var(--sans); font-size: .9rem; color: var(--muted); line-height: 1.6; }
+  .card ul li { margin-bottom: .2rem; }
+  .card .tag { font-family: var(--sans); font-size: .78rem; font-weight: 600; color: var(--accent, var(--navy)); margin-bottom: .4rem; display: block; }
+
+  /* Activation points */
+  .points { list-style: none; padding: 0; margin: 2.25rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr)); gap: 1.6rem 2rem; counter-reset: pt; }
+  .points li { position: relative; padding-left: 1.4rem; }
+  .points li::before { content: ""; position: absolute; left: 0; top: .55rem; width: .62rem; height: .62rem; border-radius: 50%; background: var(--c, var(--navy)); }
+  .points strong { display: block; font-weight: 600; font-size: 1.08rem; }
+  .points span { font-family: var(--sans); font-size: .875rem; color: var(--muted); line-height: 1.5; display: block; margin-top: .15rem; }
+
+  /* Outcomes */
+  .continuum { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 2rem; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--surface); }
+  .continuum > div { padding: 1.5rem 1.75rem; }
+  .continuum > div + div { border-left: 1px solid var(--rule); }
+  .continuum h3 { font-size: 1.2rem; }
+  .continuum ul { margin: .5rem 0 0; padding-left: 1.1rem; font-family: var(--sans); font-size: .92rem; color: var(--muted); line-height: 1.7; }
+  .continuum > .continuum-bar { padding: 0; height: 4px; background: linear-gradient(90deg, var(--sage), var(--teal) 45%, var(--plum) 65%, var(--clay)); grid-column: 1 / -1; }
+
+  /* Stats */
+  .stats { display: flex; flex-wrap: wrap; gap: 2.5rem 4rem; margin: 2rem 0 2.25rem; }
+  .stat .num { font-size: 3rem; line-height: 1; color: var(--navy); font-weight: 500; }
+  .stat .lbl { font-family: var(--sans); font-size: .875rem; color: var(--muted); margin-top: .45rem; max-width: 13rem; }
+
+  /* Propositions */
+  ol.props { margin: 1.5rem 0 0; padding: 0; list-style: none; counter-reset: p; max-width: 50rem; }
+  ol.props li { counter-increment: p; position: relative; padding: 1rem 0 1rem 3.25rem; border-top: 1px solid var(--rule); }
+  ol.props li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.props li::before { content: "P" counter(p); position: absolute; left: 0; top: 1.1rem; font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--navy); background: #e6e9ee; padding: .1rem .45rem; border-radius: 3px; }
+
+  /* Positionality */
+  blockquote.position { margin: 1.5rem 0 0; padding: 0 0 0 1.5rem; border-left: 3px solid var(--rule); font-style: italic; max-width: 46rem; color: #2e3137; }
+
+  /* Citation */
+  .cite { font-family: var(--sans); font-size: .92rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 1.25rem 1.5rem; max-width: 50rem; line-height: 1.6; }
+  .cite em { font-family: var(--serif); font-size: 1.02rem; }
+
+  /* Bio */
+  .bio { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; align-items: start; margin-top: 1.5rem; }
+  .bio img { width: 100%; border-radius: 4px; border: 1px solid var(--rule); filter: saturate(.95); }
+  .bio .name { font-size: 1.6rem; font-weight: 500; margin: 0 0 .15rem; }
+  .bio .creds { font-family: var(--sans); font-size: .9rem; color: var(--muted); margin: 0 0 1.25rem; }
+  dl.facts { margin: 1.75rem 0 0; font-family: var(--sans); font-size: .9rem; display: grid; grid-template-columns: 7.5rem 1fr; gap: .6rem 1.25rem; max-width: var(--measure); }
+  dl.facts dt { font-weight: 600; color: var(--ink); }
+  dl.facts dd { margin: 0; color: var(--muted); }
+  .contact-links { font-family: var(--sans); font-size: .9rem; margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+
+  footer { border-top: 1px solid var(--rule); margin-top: 2rem; }
+  footer .inner { max-width: 64rem; margin: 0 auto; padding: 2rem 1.5rem 3rem; font-family: var(--sans); font-size: .8rem; color: var(--muted); line-height: 1.6; }
+  footer p { max-width: 50rem; }
+
+  @media (max-width: 720px) {
+    body { font-size: 1.075rem; }
+    .hero { padding: 3.5rem 0 3rem; }
+    section { padding: 3.25rem 0; }
+    .bio { grid-template-columns: 1fr; }
+    .bio img { max-width: 13rem; }
+    .continuum { grid-template-columns: 1fr; }
+    .continuum > div + div { border-left: 0; border-top: 1px solid var(--rule); }
+    nav ul { gap: .2rem 1rem; }
+    dl.facts { grid-template-columns: 1fr; gap: .15rem; }
+    dl.facts dd { margin-bottom: .6rem; }
+  }
+  @media print {
+    header.site { position: static; }
+    nav { display: none; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="site-inner">
+    <a class="brand" href="#top">Adoption Lifespan Activation Framework</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#model">Model</a></li>
+        <li><a href="#processes">Processes</a></li>
+        <li><a href="#activation">Activation points</a></li>
+        <li><a href="#foundations">Foundations</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#author">About the author</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <p class="eyebrow">ALAF &middot; An emerging, adoptee-centered framework</p>
+    <h1>Adoption Lifespan Activation Framework</h1>
+    <p class="subtitle">Toward a lifespan developmental theory of adoption-related psychosocial experiences</p>
+    <p class="byline">Ashley M. Toland, DSW, LCSW &middot; Department of Social Work, University of West Florida</p>
+    <div class="spectrum" role="presentation"></div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <p class="eyebrow">Overview</p>
+    <h2>Adoption does not end at placement</h2>
+    <p class="lede">Adoption research has historically centered childhood placement, permanency, and adjustment within adoptive families, often privileging the perspectives of adoptive parents, agencies, and helping professionals over those of adopted persons themselves.</p>
+    <p>Yet adopted people continue to navigate questions of identity, attachment, family membership, and belonging well into adulthood, encountering developmental and relational experiences that reshape how they understand their adoption. Existing theory does not fully explain how adoption continues to shape individuals across the life course, or why adoptees experience and interpret its consequences so differently.</p>
+    <p>The <strong>Adoption Lifespan Activation Framework (ALAF)</strong> proposes that adoption influences psychosocial development across the lifespan, and that adoptee self-appraisal and meaning-making are the central mechanisms through which adoption-related experiences acquire psychological significance. Rather than positioning adoption as inherently traumatic or universally beneficial, ALAF treats adoption as a complex developmental experience shaped by early relational events, family environments, cultural and social contexts, adoption practices, and institutional structures.</p>
+    <div class="claim">
+      <div class="label">Central claim</div>
+      <p>The meaning adoptees assign to their experiences influences how, when, and to what extent adoption shapes identity, attachment, belonging, and psychosocial functioning across the lifespan.</p>
+    </div>
+    <p style="margin-top:1.5rem">This shifts the theoretical focus away from externally defined measures of adoption &ldquo;success&rdquo; or &ldquo;failure&rdquo; and toward adoptees&rsquo; own interpretations of their lives.</p>
+  </section>
+
+  <!-- MODEL -->
+  <section id="model">
+    <p class="eyebrow">Figure 1</p>
+    <h2>The conceptual model</h2>
+    <p>ALAF links early adoption-related experiences and the adoption context to psychosocial processes and outcomes through adoptee self-appraisal and meaning-making. Moderating contexts shape every pathway, and a return path carries later life events back into the meaning-making process, so meaning is revisited and revised rather than settled once.</p>
+    <figure>
+      <div class="figure-frame">
+        <a href="images/alaf-conceptual-model.png" target="_blank" rel="noopener" aria-label="Open full-size conceptual model in a new tab">
+          <img src="images/alaf-conceptual-model.png" alt="Adoption Lifespan Activation Framework conceptual model. Early adoption-related experiences (relinquishment, separation, loss) and the adoption context (adoptive family environment; cultural and social context; adoption practices and policies) feed into adoptee self-appraisal and meaning-making, the central explanatory mechanism. This shapes three interconnected psychosocial processes — identity development, attachment representations, and belonging and family membership — which lead to adaptive or challenged psychosocial outcomes. Moderating contexts (demographic factors, relational context, life conditions, and adoption-specific services and supports) influence each pathway. Lifespan activation points from relinquishment through the death of a birth or adoptive parent feed back into meaning-making. Core theoretical foundations are attachment theory, identity development, trauma theory, and ambiguous loss." width="1312" height="1199" loading="lazy">
+        </a>
+      </div>
+      <figcaption><strong>Figure 1.</strong> Adoption Lifespan Activation Framework: Conceptual Model. Solid arrows denote hypothesized directional pathways; dashed arrows denote moderating influences; the return path at left denotes the reactivation and reinterpretation of adoption-related experiences across the life course. Select the figure to view it at full size.</figcaption>
+    </figure>
+  </section>
+
+  <!-- MECHANISM + PROCESSES -->
+  <section id="processes">
+    <p class="eyebrow">Mechanism &amp; processes</p>
+    <h2>Self-appraisal and meaning-making</h2>
+    <p>Adoptees actively interpret and make sense of their adoption experiences through personal, relational, and societal lenses. Meaning-making is influenced by lived experience, family narratives, relationships, access to information, and changing developmental contexts. It is the hinge on which the framework turns: the same adoption-related event can carry very different psychological weight depending on how it is understood, and when.</p>
+    <p>Meaning-making operates through three interconnected, dynamic psychosocial processes.</p>
+
+    <div class="grid grid-3">
+      <article class="card" style="--accent: var(--teal)">
+        <span class="tag">Process 1</span>
+        <h3>Identity development</h3>
+        <ul>
+          <li>Sense of self and self-concept</li>
+          <li>Genealogical and cultural identity</li>
+          <li>Integration of multiple identities</li>
+          <li>Continuity and coherence</li>
+          <li>Identity exploration and revision</li>
+        </ul>
+      </article>
+      <article class="card" style="--accent: var(--clay)">
+        <span class="tag">Process 2</span>
+        <h3>Attachment representations</h3>
+        <ul>
+          <li>Internal working models of self and others</li>
+          <li>Trust and relational security</li>
+          <li>Abandonment and rejection sensitivity</li>
+          <li>Intimacy and dependence</li>
+          <li>Relational patterns</li>
+        </ul>
+      </article>
+      <article class="card" style="--accent: var(--sage)">
+        <span class="tag">Process 3</span>
+        <h3>Belonging &amp; family membership</h3>
+        <ul>
+          <li>Feelings of connection and acceptance</li>
+          <li>Place within biological, adoptive, and broader families</li>
+          <li>Social and community belonging</li>
+          <li>Experiences of otherness or exclusion</li>
+          <li>Membership, recognition, and identity within families and communities</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ACTIVATION POINTS -->
+  <section id="activation">
+    <p class="eyebrow">Lifespan development</p>
+    <h2>Activation points across the life course</h2>
+    <p>ALAF conceptualizes adoption as a nonlinear developmental experience in which meaning is continually constructed and reconstructed rather than fixed in childhood. Adoption-related experiences may become newly significant at developmental and relational transitions, prompting adoptees to revisit earlier understandings of separation, family, identity, and belonging.</p>
+    <div class="spectrum" role="presentation" style="margin-top:2rem"></div>
+    <ol class="points">
+      <li style="--c: var(--clay)"><strong>Relinquishment &amp; early separation</strong><span>The originating disruption of an expected biological and relational connection.</span></li>
+      <li style="--c: var(--umber)"><strong>Adoption awareness</strong><span>Coming to know and understand oneself as an adopted person.</span></li>
+      <li style="--c: var(--ochre)"><strong>Adolescence</strong><span>Identity, belonging, and origins move to the foreground.</span></li>
+      <li style="--c: var(--ochre)"><strong>Birthdays &amp; age milestones</strong><span>Recurring markers that can carry the anniversary of separation.</span></li>
+      <li style="--c: var(--olive)"><strong>Intimate relationships</strong><span>Trust, closeness, and fear of abandonment are tested anew.</span></li>
+      <li style="--c: var(--sage)"><strong>Parenthood &amp; fertility</strong><span>Pregnancy, infertility, and genetic continuity reopen earlier questions.</span></li>
+      <li style="--c: var(--sage)"><strong>Reunion</strong><span>Search and contact bring hope, risk, and renegotiated family roles.</span></li>
+      <li style="--c: var(--teal)"><strong>Second rejection or relational loss</strong><span>A later rejection can re-enact the original loss.</span></li>
+      <li style="--c: var(--teal)"><strong>Late discovery</strong><span>Learning of adoption status beyond early childhood, sometimes in adulthood.</span></li>
+      <li style="--c: var(--slate)"><strong>Aging &amp; health</strong><span>Medical history, mortality, and legacy bring adoption back into view.</span></li>
+      <li style="--c: var(--plum)"><strong>Death of a birth or adoptive parent</strong><span>Grief that is often ambiguous, complicated, or disenfranchised.</span></li>
+    </ol>
+  </section>
+
+  <!-- CONTEXT + OUTCOMES -->
+  <section id="contexts">
+    <p class="eyebrow">Context &amp; outcomes</p>
+    <h2>Moderating contexts and diverse trajectories</h2>
+    <p>Contextual and intersectional conditions shape both the experiences available to adoptees and the meanings they construct. ALAF therefore does not locate responsibility for psychosocial outcomes solely within individual adoptees. Adoption-related circumstances, social structures, and subjective appraisal interact to produce diverse developmental trajectories.</p>
+
+    <div class="grid grid-4">
+      <article class="card" style="--accent: var(--navy)">
+        <h4>Demographic factors</h4>
+        <ul><li>Race and ethnicity</li><li>Gender and gender identity</li><li>Sexual orientation</li><li>Socioeconomic status</li><li>Disability</li><li>Intersectional identities</li></ul>
+      </article>
+      <article class="card" style="--accent: var(--navy)">
+        <h4>Relational context</h4>
+        <ul><li>Adoptive family relationships</li><li>Birth family relationships</li><li>Partner and intimate relationships</li><li>Parenting and family building</li><li>Peer and community connections</li></ul>
+      </article>
+      <article class="card" style="--accent: var(--navy)">
+        <h4>Life conditions</h4>
+        <ul><li>Education and career</li><li>Geographic location</li><li>Access to information and records</li><li>Social acceptance and discrimination</li><li>Health and healthcare access</li><li>Community and cultural belonging</li></ul>
+      </article>
+      <article class="card" style="--accent: var(--navy)">
+        <h4>Adoption-specific supports</h4>
+        <ul><li>Counseling and mental health care</li><li>Peer support and adoptee community</li><li>Agency-based services</li><li>Records access and information</li><li>Mutual aid and informal supports</li></ul>
+      </article>
+    </div>
+
+    <div class="continuum" aria-label="Psychosocial outcomes continuum">
+      <div class="continuum-bar" role="presentation"></div>
+      <div>
+        <h3>Adaptive outcomes</h3>
+        <ul><li>Identity integration</li><li>Self-acceptance</li><li>Secure attachment</li><li>Sense of belonging</li><li>Emotional well-being</li><li>Resilience and post-traumatic growth</li><li>Adaptive coping and meaning-making</li></ul>
+      </div>
+      <div>
+        <h3>Challenged outcomes</h3>
+        <ul><li>Identity distress or confusion</li><li>Relational insecurity</li><li>Chronic grief, ambiguous loss, or disenfranchised grief</li><li>Emotional pain and psychological difficulties</li><li>Trauma-related symptoms</li><li>Feelings of otherness or exclusion</li><li>Difficulties with trust, intimacy, or family membership</li></ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:1rem">Outcomes are understood as diverse and non-linear: a person may integrate one domain while another is reactivated years later.</p>
+  </section>
+
+  <!-- FOUNDATIONS -->
+  <section id="foundations">
+    <p class="eyebrow">Theoretical base</p>
+    <h2>Core theoretical foundations</h2>
+    <p>ALAF is developed through integrative theoretical synthesis, drawing on attachment theory, identity development, trauma theory, ambiguous loss, and lifespan developmental perspectives.</p>
+    <div class="grid grid-2">
+      <article class="card" style="--accent: var(--clay)">
+        <span class="tag">Bowlby; Main</span>
+        <h3>Attachment theory</h3>
+        <p>Early relational experiences shape internal working models of self and others that carry into later relationships.</p>
+      </article>
+      <article class="card" style="--accent: var(--teal)">
+        <span class="tag">Erikson; Grotevant</span>
+        <h3>Identity development</h3>
+        <p>Identity is constructed through ongoing exploration and integration, including the integration of adoptive and genealogical identities.</p>
+      </article>
+      <article class="card" style="--accent: var(--plum)">
+        <span class="tag">Herman; van der Kolk</span>
+        <h3>Trauma theory</h3>
+        <p>Unresolved experiences may remain latent and be activated by later stressors and relational transitions.</p>
+      </article>
+      <article class="card" style="--accent: var(--sage)">
+        <span class="tag">Boss</span>
+        <h3>Ambiguous loss</h3>
+        <p>Absent biological family members remain psychologically significant, producing loss without clear closure.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <p class="eyebrow">Empirical grounding</p>
+    <h2>Informed by adult adoptees</h2>
+    <p>The development of ALAF is informed by <em>Adoption Across the Lifespan</em>, an ongoing international mixed-methods research program with adult adoptees.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">662</div><div class="lbl">survey respondents</div></div>
+      <div class="stat"><div class="num">90+</div><div class="lbl">in-depth interviews with adult adoptees</div></div>
+    </div>
+    <p>Preliminary survey findings suggest that adoptees&rsquo; subjective appraisal of adoption explains meaningful variation in attachment and identity outcomes beyond selected demographic and adoption-related characteristics. These findings inform the framework&rsquo;s emphasis on self-appraisal while remaining distinct from formal theory validation.</p>
+
+    <h3 style="margin-top:2.5rem">What the manuscript sets out</h3>
+    <ol class="props">
+      <li>The framework&rsquo;s foundational constructs: early adoption-related experiences, adoption context, self-appraisal and meaning-making, the three psychosocial processes, and moderating contexts.</li>
+      <li>Proposed explanatory pathways linking adoption-related circumstances, social structures, and subjective appraisal to diverse developmental trajectories.</li>
+      <li>Testable propositions about how, when, and to what extent adoption-related experiences are activated and reinterpreted across the life course.</li>
+      <li>Priorities for longitudinal, qualitative, and participatory research.</li>
+    </ol>
+
+    <h3 style="margin-top:2.5rem">Contribution</h3>
+    <p>ALAF contributes to adoptee-directed scholarship by positioning adoptees not merely as subjects of adoption research but as interpreters and producers of knowledge about adoption. By centering adult adoptee perspectives, the framework challenges dominant narratives that equate permanency with resolution, placement with belonging, or adoption with a singular developmental outcome.</p>
+
+    <h3 style="margin-top:2.5rem">Researcher positionality</h3>
+    <blockquote class="position">
+      <p>I am a same-race, domestic, infant adoptee and clinical social worker. My lived experience informs the questions I ask and my commitment to centering adoptees as authoritative interpreters of their own experiences. I recognize that my experiences do not represent those of all adoptees, and I approach this work with an ongoing commitment to reflexivity, methodological rigor, and accountability to the adoptee communities whose perspectives inform the framework.</p>
+    </blockquote>
+
+    <h3 style="margin-top:2.5rem">Suggested citation</h3>
+    <div class="cite">
+      Toland, A. M. (2026). <em>Adoption Lifespan Activation Framework: Toward a lifespan developmental theory of adoption-related psychosocial experiences</em> [Manuscript in preparation]. Department of Social Work, University of West Florida.
+    </div>
+  </section>
+
+  <!-- ABOUT THE AUTHOR -->
+  <section id="author">
+    <p class="eyebrow">About the author</p>
+    <h2>Ashley M. Toland, DSW, LCSW</h2>
+    <div class="bio">
+      <img src="images/toland-headshot.jpg" alt="Portrait of Ashley M. Toland" width="384" height="480">
+      <div>
+        <p class="creds">Assistant Professor, Department of Social Work, University of West Florida</p>
+        <p>Ashley M. Toland, DSW, LCSW, is an Assistant Professor in the Department of Social Work at the University of West Florida and a licensed clinical social worker in private practice in Alabama. She brings twenty years of experience across clinical social work, public and higher education, community mental health, child welfare, and clinical supervision.</p>
+        <p>Dr. Toland&rsquo;s scholarship centers the lifespan experiences of adult adoptees. She developed <em>The Adoption Trauma Spectrum</em> and leads <em>Adoption Across the Lifespan</em>, an international, IRB-approved mixed-methods study of adult adoptees conducted by a research team that includes both adoptee and non-adoptee scholars. Her work also addresses adoption-informed clinical care, child welfare policy reform, and the history of racial disproportionality in the U.S. child welfare system.</p>
+        <p>Her peer-reviewed work appears in <em>Adoption Quarterly</em>, <em>Reflections: Narratives of Professional Helping</em>, <em>Social Work Education</em>, and the <em>Journal of Social Work Education</em>, with book chapters published by Oxford Academic and Cognella. She has presented at the Society for Social Work and Research, the Council on Social Work Education, the International Conference on Adoption Research, the EUSARF International Conference, and the World Conference on Remedies to Racial &amp; Social Inequality.</p>
+        <p>A same-race, domestic, infant adoptee, Dr. Toland earned her Doctor of Social Work from Tulane University (2022) and her MSW from the University of Arkansas (2008).</p>
+        <dl class="facts">
+          <dt>Education</dt><dd>DSW, Tulane University (2022) &middot; MSW, University of Arkansas (2008)</dd>
+          <dt>Research</dt><dd>Adult adoptee experiences across the lifespan &middot; adoption-informed mental health care &middot; child welfare policy reform</dd>
+          <dt>Selected work</dt><dd>Toland et al. (2024), &ldquo;Adoption-informed care: What clinicians in the United States need to know,&rdquo; <em>Adoption Quarterly</em>. <a href="https://doi.org/10.1080/10926755.2024.2352385" target="_blank" rel="noopener">doi:10.1080/10926755.2024.2352385</a></dd>
+        </dl>
+        <div class="contact-links">
+          <a href="https://theadoptiontraumaspectrum.com" target="_blank" rel="noopener">theadoptiontraumaspectrum.com</a>
+          <a href="mailto:atoland@uwf.edu">atoland@uwf.edu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p>&copy; 2026 Ashley M. Toland, DSW, LCSW. All rights reserved.</p>
+    <p>The Adoption Lifespan Activation Framework is part of the Adoption Across the Lifespan Study and is the intellectual property of Ashley M. Toland, DSW, LCSW. No part of this material may be reproduced, distributed, shared, or transmitted in any form or by any means without proper attribution to and/or written permission from the author.</p>
+  </div>
+</footer>
+</body>
+</html>
